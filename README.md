@@ -169,7 +169,6 @@ These areas represent the strongest candidates for gentrification-related pressu
 
 - Python (Pandas, NumPy)
 - Visualization (Matplotlib, Seaborn)
-- Analysis (Scikit-learn)
 
 ---
 
