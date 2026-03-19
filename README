@@ -1,0 +1,84 @@
+# Airbnb & Gentrification Florida Case Study
+
+## Project Summary
+This repository contains a data-driven analysis of Airbnb listings in Florida (with a focus on Broward County), exploring how short-term rental density, price levels, and host concentration relate to possible gentrification pressures.
+
+The goal is to map Airbnb market concentration, identify neighborhoods with high tourist demand and housing pressure, and generate evidence-based insights for policymakers and community advocates.
+
+## Key Insights from This Investigation
+1. **Airbnb density is highly concentrated** in a few neighborhoods, with many listings clustered in major tourist areas.
+2. **Large professional hosts control a disproportionate share** of total supply, while most hosts operate 1–5 listings.
+3. **High-price and high-density neighborhoods overlap**, suggesting tourist demand drives housing pressure and possible displacement risk.
+4. **Entire-home listings dominate “hotspot” neighborhoods**, indicating conversion of long-term housing into short-term stays.
+5. **Price polarization exists**: some neighborhoods show high median and 75th percentile prices with strong Airbnb presence.
+
+## Data Sources
+- `listings.csv` Airbnb dataset
+- Listing attributes used: neighborhood, price, room type, host ID, listing ID.
+
+## Analysis Methodology
+- Clean the price field and convert to numeric values.
+- Compute Airbnb density by neighborhood and aggregate key metrics (number of listings, entire-home share, median price).
+- Segment host sizes and quantify concentration in large hosts.
+- Identify neighborhood hotspots by share of listings from large hosts and entire-home percentage.
+- Rank neighborhoods by supply and high-price percentiles to flag potential gentrification hotspots.
+
+## Visual Outputs (Graphs)
+Each chart is generated in `Graphs/` and saved as a PNG.
+
+### 1) Airbnb listings per neighborhood
+![Airbnbs per Neighborhood](Graphs/airbnbs_per_neighborhood.png)
+- Shows raw number of Airbnb listings by neighborhood.
+- Reveals which neighborhoods have the strongest Airbnb presence.
+
+### 2) Listings per neighborhood (Broward County)
+![Listings per Neighborhood Broward](Graphs/listings_per_neighborhood_broward.png)
+- Bar chart with rotated labels for readability.
+- Helps compare listing volume across local areas.
+
+### 3) Distribution of listings per host
+![Listings per Host Distribution](Graphs/listings_distribution_per_host.png)
+- Log-scale histogram showing most hosts manage few listings.
+- Includes outlier filtering to improve readability.
+
+### 4) Top 10 listings per host
+![Top 10 Listings per Host](Graphs/top_10_listings_per_host.png)
+- Demonstrates that few hosts have many listings, indicating potential market power.
+
+### 5) Host size concentration
+![Host Size Concentration](Graphs/host_size_concentration.png)
+- Shows share of total listings by host size segment.
+- Highlights the market share of large hosts (6+ or 21+ listings).
+
+### 6) Large hosts and entire-home hotspots
+![Large Hosts Entire Homes Hotspots](Graphs/large_hosts_entire_homes_hotspots.png)
+- Compares share of listings from large hosts with entire-home share by neighborhood.
+- Useful for identifying areas where investor-driven rentals are concentrated.
+
+### 7) Highest Airbnb presence neighborhoods
+![Highest Airbnb Presence Neighborhoods](Graphs/highest_airbnb_presence_neighborhoods.png)
+- Combines listing counts and entire-home share for top neighborhoods.
+- Helps identify likely tourist-focused neighborhoods.
+
+### 8) High price + high density neighborhoods (potential gentrification hotspots)
+![High Price High Density Neighborhoods](Graphs/high_price_high_density_neighborhoods.png)
+- Combines 75th percentile price and listing density.
+- Flags neighborhoods where Airbnb-driven rental pressure may coincide with premium housing.
+
+## Practical Findings for Policy and Community Action
+- Neighborhoods with high Airbnb density and high price percentiles should be prioritized for monitoring.
+- Large-host concentration suggests regulation should target investment-market actors (e.g., holding company hosts) as well as individual hosts.
+- Entire-home dominance in hotspots indicates risk of reducing long-term rental supply.
+- Conduct community surveys in flagged neighborhoods to validate displacement and affordability impacts.
+
+## How to Reproduce
+1. Open `Gentrification_analysis.ipynb`.
+2. Run each cell sequentially. The notebook reads `listings.csv` and writes chart PNGs into `Graphs/`.
+3. Confirm the saved charts in `Graphs/`.
+
+## License
+Educational and research use.
+
+---
+
+If you want, I can add a short “Next steps” section for deeper multi-year trend analysis and spatial mapping with geocoded Census tract data.
